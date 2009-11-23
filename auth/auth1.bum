@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="AUTH ≔ ∅" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="passrelle"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="AUTH"/>
+<org.eventb.core.invariant name="*" org.eventb.core.label="inv1" org.eventb.core.predicate="AUTH ∈ (Personnes ↔ Batiments)"/>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addAuth">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ Personnes"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="b"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="b ∈ Batiments"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="AUTH ≔ AUTH ∪ {p↦b}" org.eventb.core.comment="ajoute p à la lsite des personnes &#10;authoriser à aller dans b" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="p↦b ∉ AUTH"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="rmAuth">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="b"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ Personnes"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="b ∈ Batiments"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="AUTH ≔ AUTH  ∖ {p↦b}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="p↦b ∈ AUTH"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

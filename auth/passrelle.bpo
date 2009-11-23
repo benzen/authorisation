@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="19">
+<org.eventb.core.poIdentifier name="Batiments" org.eventb.core.type="ℙ(Batiments)"/>
+<org.eventb.core.poIdentifier name="Personnes" org.eventb.core.type="ℙ(Personnes)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/auth/passrelle.bpo|org.eventb.core.poFile#passrelle|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="19"/>
+</org.eventb.core.poFile>

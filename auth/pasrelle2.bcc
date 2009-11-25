@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scExtendsContext name="EXTENDS0" org.eventb.core.scTarget="/auth/passrelle.bcc|org.eventb.core.scContextFile#passrelle" org.eventb.core.source="/auth/pasrelle2.buc|org.eventb.core.contextFile#pasrelle2|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scInternalContext name="passrelle">
 <org.eventb.core.scAxiom name="AXM0" org.eventb.core.label="axm1" org.eventb.core.predicate="Outside∈Buildings" org.eventb.core.source="/auth/passrelle.buc|org.eventb.core.contextFile#passrelle|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
 <org.eventb.core.scCarrierSet name="Buildings" org.eventb.core.source="/auth/passrelle.buc|org.eventb.core.contextFile#passrelle|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(Buildings)"/>
 <org.eventb.core.scConstant name="Outside" org.eventb.core.source="/auth/passrelle.buc|org.eventb.core.contextFile#passrelle|org.eventb.core.constant#+" org.eventb.core.type="Buildings"/>
 <org.eventb.core.scCarrierSet name="Personns" org.eventb.core.source="/auth/passrelle.buc|org.eventb.core.contextFile#passrelle|org.eventb.core.carrierSet#*" org.eventb.core.type="ℙ(Personns)"/>
+</org.eventb.core.scInternalContext>
 </org.eventb.core.scContextFile>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="23">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="23">
+<org.eventb.core.poFile org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="9">
 <org.eventb.core.poIdentifier name="Buildings" org.eventb.core.type="ℙ(Buildings)"/>
 <org.eventb.core.poIdentifier name="Personns" org.eventb.core.type="ℙ(Personns)"/>
 <org.eventb.core.poIdentifier name="Outside" org.eventb.core.type="Buildings"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/auth/passrelle.bpo|org.eventb.core.poFile#passrelle|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="23">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Outside∈Buildings" org.eventb.core.source="/auth/passrelle.buc|org.eventb.core.contextFile#passrelle|org.eventb.core.axiom#,"/>
 </org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/auth/pasrelle2.bpo|org.eventb.core.poFile#pasrelle2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="9"/>
 </org.eventb.core.poFile>

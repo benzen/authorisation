@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+
+
+\title{Projet Authorisation}
+\author{Benjamin DREUX}
+
+\begin{document}
+\maketitle
+\section{Définition du problème}
+Le sujet présentela problématique d'un système de control d'accès dans un complexe de bâtiments. Le sujet précise qu'il existe des bâtiements qui communiques entre eux. De plus pour entrer dans un bâtiement il faut "montrer pattes blanche". C'est a dire que à la sortie de chaque batiement il y'as un contrôle d'accès qui doit être effectué. Les communication entre bâtimentsse font par des passrelles, selon un sens unique de passage. Les droits de passage sont définit selon une liste d'authorisation qui doit être elle même dynamique. Ainsi avoir accès a un bâtiements un jour ne veux pas dire y avoir accès toujours.
+Certains poitn sont implicite a ce genre de système. Par exemple une personne ne peux être a deux endroit à la fois. De même une personne doit pouvoir être authoriser à aller à plusieurs endroits, et plusieurs personnes doivent pouvoir aller au même endroit.
+ Pour ce qui est des points de détails les utilisateur du système doivent être informé à chaque demande si ils ont le droit ou pas d'accédéer à un batiement. De plus il s'agit d'un droit, et non pas d'un devoir. Ainsi un tulisateur peux demander l'accès a un batiement sans toute fois l'utiliser. Pour éviter que les portes des batiements restes ouvertes \emph{Ad Vitam} ces dernières doivent se re bloquer, que l'utilisateur sois passé ou pas.
+\section{Modèle et context intial}
+Le premier modèle à pour objectif de mettre en place une solution pour la problématique initial. ici plusieurs interprétation peuvent être faite du sujet. Le choix qui a été fais est de se focaliser en premier lieu sur la gestion des authorisation. Ainsi le modèle initial prend en compte uniquement les problématique liées aux authorisation. Le context lié a ce premier modèle définit les ensembles Personns et Building, car ces ensembles sont indispensable pour gérer authorisations.
+Au passage ce modèle définit l'exterieur, exterieur du système, comme un batiement spécifique. Évidement l'extrieur doit être un endroit ou toute personne peux se rendre en tout temps. Donc un invariant est ajouter au modèle qui définit que la liste des authorisations doit permettre à toute personne d'aller dehors.
+
+%TODO :ajouter le code du modèle modèle un et le context
+
+\section{Définition du premier raffinement}
+Le second modèle met en place la problématique de déplacement des personnes. Ainsi ce modèle apporte un seul élément nouveaux. Un évenement de déplacement d'un personne vers un batiment. Mais en plus il modifie un événement précédent. Ainsi on précise ici dans l'évenement rmAuth 
+%TODO ajouter code de la vérification présence 
+que pour enlever une authorisation la personne ne doit pas être présente dans le batiment au moment de l'opération.
+Pour pouvoir se déplacer il fallait que l'on ajoute un connaisance au modèle, celle de l'emplacement actuelle des personnes. Bien sur à l'inistialisation du modèle toutes personne est définit comme à l'exterieur.
+
+\section{Définition du second raffinement}
+Ce troisième modèle apport une problématique essentiel au sujet, la communication entre les bâtiements.
+
+
+\tableofcontents
+\end{document}

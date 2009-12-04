@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="67"/>
+<org.eventb.core.psStatus name="addAuth/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="addAuth/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="addAuth/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="rmAuth/grd2/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="78" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="rmAuth/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="78"/>
+<org.eventb.core.psStatus name="rmAuth/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="78"/>
+<org.eventb.core.psStatus name="rmAuth/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="78" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="move/grd2/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="73" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="move/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="73"/>
+<org.eventb.core.psStatus name="move/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="73" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="addPtoG/grd3/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="85" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="addPtoG/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="85"/>
+<org.eventb.core.psStatus name="addPtoG/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="85" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="rmPofG/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="79"/>
+<org.eventb.core.psStatus name="rmPofG/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="79" org.eventb.core.psManual="true"/>
+</org.eventb.core.psFile>

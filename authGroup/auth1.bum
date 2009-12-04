@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="loc ≔ Personn × {OUTSIDE}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="auth ≔ Group × {OUTSIDE}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="group ≔ ∅" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="*" org.eventb.core.comment="positive authorisation" org.eventb.core.identifier="auth"/>
+<org.eventb.core.seesContext name="-" org.eventb.core.target="ctx"/>
+<org.eventb.core.invariant name="." org.eventb.core.label="inv3" org.eventb.core.predicate="auth ∈ Group ↔ Building"/>
+<org.eventb.core.invariant name="2" org.eventb.core.comment="I can't be in an unauthorized building" org.eventb.core.label="inv4" org.eventb.core.predicate="loc  ∈ Personn → Building"/>
+<org.eventb.core.invariant name="3" org.eventb.core.comment="any time everybody can go outside" org.eventb.core.label="inv5" org.eventb.core.predicate="∀g·(g∈Group ⇒ g↦OUTSIDE ∈ auth)"/>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv6" org.eventb.core.predicate="group ∈ Personn ⇸ Group"/>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addAuth">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="g"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="b"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="g ∈ Group"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="b ∈ Building"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="auth ≔ auth ∪ {g↦b}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.comment="we don't want to remove a currently used authorisation" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="rmAuth">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="g"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="b"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="g ∈ Group"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="b ∈ Building"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="auth ≔ auth ∖ {g↦b}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="b ≠ OUTSIDE"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="this group is authorized to acces to thuis building" org.eventb.core.label="grd1" org.eventb.core.predicate="g↦b ∈ auth"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="nobody from this group is in the building" org.eventb.core.label="grd2" org.eventb.core.predicate="{group∼(g)}× {b}⊆ loc"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="loc"/>
+<org.eventb.core.event name="5" org.eventb.core.comment="we only move to authorized building" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="move">
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="b"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="dont move to where you are" org.eventb.core.label="grd1" org.eventb.core.predicate="p↦b ∉ loc"/>
+<org.eventb.core.guard name="+" org.eventb.core.comment="just go where your group is authorized to go" org.eventb.core.label="grd2" org.eventb.core.predicate="group(p)↦b ∈ auth"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="loc ≔  loc  {p↦b}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="6" org.eventb.core.identifier="group"/>
+<org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addPtoG">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="g"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="this personn don't belong to a group" org.eventb.core.label="grd2" org.eventb.core.predicate="p↦g ∉ group"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="group ≔ group  {p↦g}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="loc(p) ∈ {auth(g)}"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="rmPofG">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="g"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="To simplifie remove personn from &#10;group only when they are outside" org.eventb.core.label="grd2" org.eventb.core.predicate="p ↦ OUTSIDE ∈ loc"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="p↦g ∈ group"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="group ≔ group ∖ {p↦g}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name=":" org.eventb.core.comment="we can only stand where we are authorized" org.eventb.core.label="inv7" org.eventb.core.predicate="group∼;loc ⊆ auth"/>
+</org.eventb.core.machineFile>

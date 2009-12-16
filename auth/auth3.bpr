@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Buildings">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="Outside" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Outside∈Buildings"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(Buildings×Buildings))∈Buildings ↔ Buildings"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addPath/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Buildings,Personns">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p6,p2,p5,p4,p8,p1,p7">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="AUTH" org.eventb.core.type="ℙ(Personns×Buildings)"/>
+<org.eventb.core.prIdent name="LOC" org.eventb.core.type="ℙ(Personns×Buildings)"/>
+<org.eventb.core.prIdent name="Outside" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prIdent name="PATH" org.eventb.core.type="ℙ(Buildings×Buildings)"/>
+<org.eventb.core.prIdent name="bDest" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prIdent name="bSource" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="bSource∈Buildings"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="LOC∈Personns → Buildings"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="Outside∈Buildings"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="PATH∪{bSource ↦ bDest}∈Buildings ↔ Buildings"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personns·p∈Personns⇒p ↦ Outside∈AUTH"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="PATH∈Buildings ↔ Buildings"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="AUTH∈Personns ↔ Buildings"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="bDest∈Buildings"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="bSource ↦ bDest∉PATH"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmPath/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Buildings,Personns">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p7,p2,p6,p5,p1,p8,p4">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="AUTH" org.eventb.core.type="ℙ(Personns×Buildings)"/>
+<org.eventb.core.prIdent name="LOC" org.eventb.core.type="ℙ(Personns×Buildings)"/>
+<org.eventb.core.prIdent name="Outside" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prIdent name="PATH" org.eventb.core.type="ℙ(Buildings×Buildings)"/>
+<org.eventb.core.prIdent name="bDest" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prIdent name="bSource" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="bSource∈Buildings"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="LOC∈Personns → Buildings"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="Outside∈Buildings"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personns·p∈Personns⇒p ↦ Outside∈AUTH"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="PATH∈Buildings ↔ Buildings"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="bSource ↦ bDest∈PATH"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="AUTH∈Personns ↔ Buildings"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="bDest∈Buildings"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="PATH ∖ {bSource ↦ bDest}∈Buildings ↔ Buildings"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="move/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="Buildings,Personns">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p8,p1,p6,p5,p9,p2,p3,p7">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="AUTH" org.eventb.core.type="ℙ(Personns×Buildings)"/>
+<org.eventb.core.prIdent name="LOC" org.eventb.core.type="ℙ(Personns×Buildings)"/>
+<org.eventb.core.prIdent name="Outside" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prIdent name="PATH" org.eventb.core.type="ℙ(Buildings×Buildings)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Buildings"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personns"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="LOC∈Personns → Buildings"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈Personns"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="p ↦ b∉LOC"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Outside∈Buildings"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personns·p∈Personns⇒p ↦ Outside∈AUTH"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="PATH∈Buildings ↔ Buildings"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p∈dom(LOC)∧LOC∈Personns ⇸ Buildings"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="AUTH∈Personns ↔ Buildings"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="p ↦ b∈AUTH"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="b∈Buildings"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>

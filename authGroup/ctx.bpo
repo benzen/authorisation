@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="5">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="6">
 <org.eventb.core.poIdentifier name="Building" org.eventb.core.type="ℙ(Building)"/>
 <org.eventb.core.poIdentifier name="Group" org.eventb.core.type="ℙ(Group)"/>
 <org.eventb.core.poIdentifier name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.poIdentifier name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.poIdentifier name="OUTSIDE" org.eventb.core.type="Building"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/authGroup/ctx.bpo|org.eventb.core.poFile#ctx|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/authGroup/ctx.bpo|org.eventb.core.poFile#ctx|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="6">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="OUTSIDE∈Building" org.eventb.core.source="/authGroup/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="FOREIGNER∈Group" org.eventb.core.source="/authGroup/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#-"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

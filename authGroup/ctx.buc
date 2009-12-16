@@ -5,4 +5,6 @@
 <org.eventb.core.constant name=")" org.eventb.core.identifier="OUTSIDE"/>
 <org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="OUTSIDE ∈ Building"/>
 <org.eventb.core.carrierSet name="+" org.eventb.core.comment="" org.eventb.core.identifier="Personn"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="FOREIGNER"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="FOREIGNER ∈ Group"/>
 </org.eventb.core.contextFile>

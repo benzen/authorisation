@@ -8,13 +8,15 @@
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="OUTSIDE∈Building"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Group × {OUTSIDE}∈Group ↔ Building"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Building,Personn">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Personn × {OUTSIDE}∈Personn → Building"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Group × {OUTSIDE}∈Group ↔ Building"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Building,Group">
 <org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
@@ -24,13 +26,15 @@
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈Group × {OUTSIDE}"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="OUTSIDE∈Building"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Building,Group,Personn">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(Personn×Group))∈Personn ⇸ Group"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Personn × {FOREIGNER}∈Personn → Group"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="inv6/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="p" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Building,Personn">
 <org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
@@ -96,22 +100,28 @@
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="loc∈Personn → Building"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="g∈Group"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="addAuth/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="Building,Group">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1,p5,p4,p6,p3">
+<org.eventb.core.prProof name="addAuth/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p1,p3,p4,p9,p2,p7,p6,p10,p8">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
-<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Group×Building)"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auth∈Group ↔ Building"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="loc⊆auth∪{g ↦ b}"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="b∈Building"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="loc⊆auth"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="g∈Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="auth∪{g ↦ b}∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="g ↦ b∉auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="g∈Group"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="addAuth/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Building,Group,Personn">
 <org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p3,p7,p6,p2,p1,p8,p5">
@@ -176,22 +186,28 @@
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn → Building"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="g∈dom(group∼)"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="rmAuth/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="Building,Group">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p2,p5,p1,p4,p6">
+<org.eventb.core.prProof name="rmAuth/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p4,p5,p9,p3,p7,p2,p10,p8">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Group×Building)"/>
-<org.eventb.core.prIdent name="p" org.eventb.core.type="Group"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="p ↦ b∈auth"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auth∈Group ↔ Building"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="loc⊆auth ∖ {p ↦ b}"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="OUTSIDE∈Building"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="loc⊆auth"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="p ↦ b∉loc"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="b≠OUTSIDE"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="auth ∖ {g ↦ b}∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="g≠FOREIGNER"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="g ↦ b∈auth"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="b≠OUTSIDE"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="rmAuth/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Building,Group,Personn">
 <org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7,p3,p12,p9,p2,p1,p5,p8,p6,p11,p10,p13,p4">
@@ -277,25 +293,19 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="p ↦ b∉loc"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="move/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="Building,Group,Personn">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p5,p8,p7,p3,p2,p9,p1,p4">
+<org.eventb.core.prProof name="move/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p3,p1,p4">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
 <org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="group∼;loc⊆auth"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group(p) ↦ b∈auth"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="group∈Personn ⇸ Group"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈dom(group)"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="auth∈Group ↔ Building"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="loc∈Personn → Building"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="p ↦ b∉loc"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group∈Personn ⇸ Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="p ↦ b∉loc"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="loc{p ↦ b}∈Personn → Building"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="move/inv6/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="p0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="Personn">
@@ -349,29 +359,32 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="p ↦ b∉loc"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="addPtoG/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="Building,Group,Personn">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7,p6,p11,p9,p3,p1,p10,p8,p2,p12,p5,p4">
+<org.eventb.core.prProof name="addPtoG/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p2,p9,p12,p6,p10,p13,p7,p3,p11,p1,p4,p14">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
 <org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
 <org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group∼;loc⊆auth"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈dom(loc)"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="group∈Personn ⇸ Group"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="group{p ↦ g}∈Personn ⇸ Group"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ⇸ Building"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="auth∈Group ↔ Building"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="g∈dom(auth)"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OUTSIDE∈Building"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="loc(p)∈{auth(g)}"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="p ↦ g∉group"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="p∈dom(loc)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="g∈Group"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="group{p ↦ g}∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="g ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="p ↦ g∉group"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="g ↦ OUTSIDE∈auth"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="inv7/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="Building,Group,Personn">
 <org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p2,p1,p5,p4">
@@ -388,13 +401,15 @@
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="loc∈Personn → Building"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒p∈dom(group)∧group∈Personn ⇸ Group∧p∈dom(loc)∧loc∈Personn ⇸ Building"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="Building,Group,Personn">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(Personn×Group))∼;(Personn × {OUTSIDE})⊆Group × {OUTSIDE}"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Personn × {OUTSIDE}∈Personn → Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="addAuth/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Building,Group,Personn">
 <org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p3,p7,p6,p2,p1,p8,p5">
@@ -456,47 +471,31 @@
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
 </org.eventb.core.prPred>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="move/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
-<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="0">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
-<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="0">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
-<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="0">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
-</org.eventb.core.prAnte>
+<org.eventb.core.prProof name="move/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p4,p9,p12,p6,p10,p7,p11,p13,p1,p3,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬p ↦ b∈loc">
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
 <org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀g⦂Group·⊤⇒g ↦ OUTSIDE∈auth">
-<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀g⦂Group·g ↦ OUTSIDE∈auth">
-<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth">
-<org.eventb.core.prIdent name="Group" org.eventb.core.type="ℙ(Group)"/>
-<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p ↦ b∉loc">
-<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
-<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
-</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group(p) ↦ b∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="group∈Personn ⇸ Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="p∈dom(group)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="p ↦ b∉loc"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="loc{p ↦ b}∈Personn → Building"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="addPtoG/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
@@ -576,20 +575,9 @@
 <org.eventb.core.prAnte name="0">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2"/>
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
-<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="0">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
-<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="0">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
 <org.eventb.core.prRule name="org.eventb.core.seqprover.conj" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p6"/>
-<org.eventb.core.prAnte name="1" org.eventb.core.prGoal="p7"/>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
-</org.eventb.core.prRule>
-</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p3"/>
+<org.eventb.core.prAnte name="1" org.eventb.core.prGoal="p4"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
@@ -600,20 +588,8 @@
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="g∈dom(group∼)∧group∼∈Group ⇸ Personn"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀g⦂Group·⊤⇒g ↦ OUTSIDE∈auth">
-<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀g⦂Group·g ↦ OUTSIDE∈auth">
-<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth">
-<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
-<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="group∼∈Group ⇸ Personn"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="g∈dom(group∼)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="group∼∈Group ⇸ Personn"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="g∈dom(group∼)"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="b≠OUTSIDE">
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
@@ -669,25 +645,28 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="p∈dom(group)∧group∈Personn ⇸ Group"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="rmPofG/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Building,Group,Personn">
-<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p3,p7,p6,p2,p1,p8,p5">
+<org.eventb.core.prProof name="rmPofG/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7,p1,p5,p6,p10,p4,p8,p3,p9,p2,p11">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
 <org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
-<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
 <org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
 <org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group∼;loc⊆auth"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="group∈Personn ⇸ Group"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="group ∖ {p ↦ g}∈Personn ⇸ Group"/>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="auth∈Group ↔ Building"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="OUTSIDE∈Building"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="p ↦ g∈group"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="loc∈Personn → Building"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="p ↦ OUTSIDE∈loc"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈dom(loc)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="FOREIGNER ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="group{p ↦ FOREIGNER}∈Personn → Group"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="rmPofG/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.psManual="true">
 <org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalPP" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2">
@@ -761,5 +740,1129 @@
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀g⦂Group·g∈Group⇒g ↦ OUTSIDE∈auth"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="loc∈Personn → Building"/>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="p ↦ g∉group"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="move/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p4,p5,p9,p3,p8,p2,p7,p10">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="p ↦ b∉loc"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p∈dom(group)∧group∈Personn ⇸ Group"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="inv8/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p4,p1,p2,p3,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒p∈dom(group)∧group∈Personn ⇸ Group∧p∈dom(loc)∧loc∈Personn ⇸ Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒(Personn × {FOREIGNER})(p) ↦ (Personn × {OUTSIDE})(p)∈Group × {OUTSIDE}"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addPtoG/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p2,p9,p12,p6,p10,p13,p7,p3,p11,p1,p4,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="p∈dom(loc)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p0⦂Personn·p0∈Personn⇒(group{p ↦ g})(p0) ↦ loc(p0)∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="g∈Group"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="g ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="p ↦ g∉group"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="g ↦ OUTSIDE∈auth"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmPofG/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7,p1,p5,p6,p10,p4,p8,p3,p9,p2,p11">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈dom(loc)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p0⦂Personn·p0∈Personn⇒(group{p ↦ FOREIGNER})(p0) ↦ loc(p0)∈auth"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="FOREIGNER ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addAuth/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p1,p3,p4,p9,p2,p7,p6,p10,p8">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth∪{g ↦ b}"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="g ↦ b∉auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="g∈Group"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="p" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="Building,Group,Personn" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p12" org.eventb.core.prInfHyps="p14"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p12"/>
+<org.eventb.core.prHypAction name="FORWARD_INF4" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p15"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p19">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p17"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p18"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p23">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p16" org.eventb.core.prInfHyps="p20"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p21"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p17"/>
+<org.eventb.core.prHypAction name="FORWARD_INF4" org.eventb.core.prHyps="p18" org.eventb.core.prInfHyps="p22"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p18"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.allI" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees p)" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p24">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalPP" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p7,p1,p4,p8,p11,p5,p9,p6,p10,p13,p14,p15,p20,p21,p22">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="30000"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth ∖ {g ↦ b}"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="∀p⦂Personn·p∈Personn∧p ↦ g∈group⇒¬p ↦ b∈loc"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="group(p) ↦ loc(p)∈auth ∖ {g ↦ b}">
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth ∖ {g ↦ b}"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="g ↦ b∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn∧p ↦ g∈group⇒p ↦ b∉loc"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀p⦂Personn·p ↦ g∈group⇒¬p ↦ b∈loc"/>
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="b≠OUTSIDE"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬b=OUTSIDE"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth ∖ {g ↦ b}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="g≠FOREIGNER"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬g=FOREIGNER"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀p⦂Personn·⊤∧p ↦ g∈group⇒¬p ↦ b∈loc"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="move/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p4,p9,p12,p6,p10,p7,p11,p13,p1,p3,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group(p) ↦ b∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="group∈Personn ⇸ Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="p∈dom(group)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p0⦂Personn·p0∈Personn⇒group(p0) ↦ (loc{p ↦ b})(p0)∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="p ↦ b∉loc"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="inv9/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p1,p3,p4,p6,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒p∈dom(group)∧group∈Personn ⇸ Group"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="loc∈Personn → Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒(Personn × {FOREIGNER})(p) ↦ OUTSIDE∈Group × {OUTSIDE}"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addPtoG/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p5,p2,p9,p12,p6,p10,p13,p7,p3,p11,p1,p4,p14">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="p∈dom(loc)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="g∈Group"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p0⦂Personn·p0∈Personn⇒(group{p ↦ g})(p0) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="g ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="p ↦ g∉group"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="g ↦ OUTSIDE∈auth"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmPofG/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p1,p5,p7,p11,p4,p9,p6,p3,p10,p2,p12">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈dom(loc)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="loc∈Personn ⇸ Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p0⦂Personn·p0∈Personn⇒(group{p ↦ FOREIGNER})(p0) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="FOREIGNER ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="loc∈Personn → Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addAuth/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p1,p3,p4,p9,p2,p7,p6,p10,p8">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="g ↦ b∉auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="g∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth∪{g ↦ b}"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p4,p5,p9,p3,p7,p2,p10,p8">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="g≠FOREIGNER"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth ∖ {g ↦ b}"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="g ↦ b∈auth"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="b≠OUTSIDE"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmPofG/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p4,p5,p8,p3,p7,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p∈dom(loc)∧loc∈Personn ⇸ Building"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="loc∈Personn → Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addPtoG/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p4,p5,p9,p3,p7,p8,p2,p10">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="p∈Personn"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p∈dom(loc)∧loc∈Personn ⇸ Building"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="p ↦ g∉group"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="g∈Group"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p4,p5,p9,p3,p7,p2,p10,p8">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="g≠FOREIGNER"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒p∈dom(group)∧group∈Personn ⇸ Group"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="g ↦ b∈auth"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="b≠OUTSIDE"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth/grd4/THM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="g≠FOREIGNER"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬g=FOREIGNER"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth/grd2/THM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p2"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p7"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬b=OUTSIDE"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="g≠FOREIGNER">
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬g=FOREIGNER">
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="b≠OUTSIDE"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈Group × {OUTSIDE}"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addPtoG/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬p ↦ g∈group">
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p ↦ g∉group">
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmPofG/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addAuth/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p1,p3,p5,p10,p2,p8,p4,p7,p11,p9">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth∪{g ↦ b}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="g ↦ b∉auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="g∈Group"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth/inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p1,p5,p7,p11,p4,p9,p6,p3,p12,p10,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn∧p ↦ g∈group⇒p ↦ b∉loc"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth ∖ {g ↦ b}"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="b≠OUTSIDE"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="g≠FOREIGNER"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="g ↦ b∈auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="loc∈Personn → Building"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="move/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬p ↦ b∈loc">
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p ↦ b∉loc">
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION///inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(Personn × {FOREIGNER})∼;(Personn × {OUTSIDE})⊆Group × {OUTSIDE}"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addPtoG///inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬p ↦ g∈group">
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p ↦ g∉group">
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmPofG///inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addAuth///inv10/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="Building,Group,Personn">
+<org.eventb.core.prRule name="com.clearsy.atelierb.provers.core.externalML" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p2,p4,p5,p10,p3,p8,p1,p7,p11,p9">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="FOREIGNER∈Group"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="group∼;loc⊆auth"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="auth∈Group ↔ Building"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="group∼;loc⊆auth∪{g ↦ b}"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="OUTSIDE∈Building"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="group∈Personn → Group"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="b∈Building"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="loc∈Personn → Building"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="g ↦ b∉auth"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="g∈Group"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="rmAuth///inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prHypAction name="FORWARD_INF4" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p11"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p12"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="FORWARD_INF4" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p10"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn∧p ↦ g∈group⇒p ↦ b∉loc">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀p⦂Personn·p ↦ g∈group⇒¬p ↦ b∈loc">
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="b≠OUTSIDE">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬b=OUTSIDE">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·p∈Personn∧p ↦ g∈group⇒¬p ↦ b∈loc">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="g≠FOREIGNER">
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬g=FOREIGNER">
+<org.eventb.core.prIdent name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀p⦂Personn·⊤∧p ↦ g∈group⇒¬p ↦ b∈loc">
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="g" org.eventb.core.type="Group"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="move///inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬p ↦ b∈loc">
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p ↦ b∉loc">
+<org.eventb.core.prIdent name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="Personn"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="inv10/THM" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="org.eventb.core.seqprover.typeRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p0" org.eventb.core.prInfHyps="p1"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prRule name="org.eventb.core.seqprover.autoRewrites" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="0">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂Personn·⊤⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ loc(p)∈auth">
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.prIdent name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂Personn·group(p) ↦ OUTSIDE∈auth">
+<org.eventb.core.prIdent name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.prIdent name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.prIdent name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.prPred>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>

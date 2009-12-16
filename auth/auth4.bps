@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="inv4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="addAuth/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="addAuth/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="addAuth/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="rmAuth/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="rmAuth/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="rmAuth/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="addPath/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="rmPath/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="15" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="auth3"/>
+<org.eventb.core.seesContext name="/" org.eventb.core.target="passrelle"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="AUTH"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="LOC"/>
+<org.eventb.core.variable name="4" org.eventb.core.identifier="PATH"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="EXIT ≔ ∅" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addAuth">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="addAuth"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmAuth">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rmAuth"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="move">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="move"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addPath">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="addPath"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmPath">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rmPath"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="8" org.eventb.core.identifier="EXIT"/>
+<org.eventb.core.invariant name="9" org.eventb.core.comment="no exit form outside" org.eventb.core.label="inv1" org.eventb.core.predicate="EXIT ∈ Buildings ∖ {Outside} → Buildings"/>
+<org.eventb.core.invariant name=":" org.eventb.core.comment="exit is a specific form of path" org.eventb.core.label="inv2" org.eventb.core.predicate="EXIT ⊆ PATH"/>
+<org.eventb.core.invariant name=";" org.eventb.core.comment="auth without Ouside is include in exit" org.eventb.core.label="inv3" org.eventb.core.predicate="AUTH ▷ {Outside} ⊆ AUTH;EXIT∼"/>
+<org.eventb.core.invariant name="=" org.eventb.core.comment="For each building used by auth there is an exit" org.eventb.core.label="inv4" org.eventb.core.predicate="∀p,b·( (p↦b ∈ AUTH ∧ b ≠ Outside)⇒p↦EXIT(b) ∈ AUTH)"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.comment="for each building used by auth there is a following building where we can go to go outside" org.eventb.core.label="inv5" org.eventb.core.predicate="∀p,b·( (p↦b ∈ AUTH ∧ b ≠ Outside) ⇒&#10; (∃e·( p↦e ∈ AUTH ∧ b↦e ∈ EXIT)))"/>
+<org.eventb.core.invariant name="?" org.eventb.core.label="inv6" org.eventb.core.predicate="∃p,b·(p↦b∈AUTH ∧ LOC(p)≠ b) &#10;⇒&#10;∃p,b·(p↦b∈AUTH ∧ LOC(p)↦b ∈ PATH)&#10;"/>
+</org.eventb.core.machineFile>

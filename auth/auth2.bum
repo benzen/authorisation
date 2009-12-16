@@ -13,7 +13,7 @@
 <org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="p↦b ∉ LOC"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="b ≠ Outside"/>
 </org.eventb.core.event>
-<org.eventb.core.seesContext name="/" org.eventb.core.target="pasrelle2"/>
+<org.eventb.core.seesContext name="/" org.eventb.core.target="passrelle"/>
 <org.eventb.core.variable name="0" org.eventb.core.identifier="LOC"/>
 <org.eventb.core.invariant name="1" org.eventb.core.label="inv1" org.eventb.core.predicate="LOC ∈ Personns → Buildings"/>
 <org.eventb.core.invariant name="2" org.eventb.core.label="inv2" org.eventb.core.predicate="∀p·(p ∈ Personns ⇒  p↦Outside ∈ AUTH)"/>

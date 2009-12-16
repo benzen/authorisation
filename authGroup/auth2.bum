@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="auth1"/>
+<org.eventb.core.seesContext name="-" org.eventb.core.target="ctx"/>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="auth"/>
+<org.eventb.core.variable name="6" org.eventb.core.identifier="group"/>
+<org.eventb.core.variable name="=" org.eventb.core.identifier="loc"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="gw ≔ ∅" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addPtoG">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="addPtoG"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmPofG">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rmPofG"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addAuth">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="addAuth"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmAuth">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rmAuth"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="@" org.eventb.core.comment="gateway" org.eventb.core.identifier="gw"/>
+<org.eventb.core.invariant name="A" org.eventb.core.label="inv1" org.eventb.core.predicate="gw ∈ Building↔Building"/>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="move">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="move"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="loc(p)↦b ∈ gw"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addGw">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="bs"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="bd"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="bd ∈ Building"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="bs ∈ Building"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="bs↦bd ∉ gw"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="gw ≔ gw ∪ {bs↦bd}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="rmGW">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="bs"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="bd"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="bs↦bd ∈ gw"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="gw ≔ gw ∖{bs↦bd}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

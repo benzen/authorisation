@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1262728672960" org.eventb.texttools.text_representation="machine auth3 refines auth2  sees ctx2&#13;&#13;variables auth group loc gw org dst pud&#13;&#13;invariants&#13;&#9;@inv1 org ∈ Door ⇸  Building&#13;&#9;@inv2 dst ∈ Door ⇸ Building&#13;&#9;@inv3 pud ∈ Personn ⤔ Door&#13;&#9;@inv4 pud;org ⊆ loc&#13;&#9;@inv5 pud;dst ⊆ auth&#13;&#13;events&#13;  event INITIALISATION extends INITIALISATION&#13;&#13;  end&#13;&#13;  event addPtoG extends addPtoG&#13;  end&#13;&#13;  event rmPofG extends rmPofG&#13;  end&#13;&#13;  event addAuth extends addAuth&#13;  end&#13;&#13;  event rmAuth extends rmAuth&#13;  end&#13;&#13;  event move extends move&#13;  end&#13;&#13;  event addGw extends addGw&#13;  end&#13;&#13;  event rmGW extends rmGW&#13;  end&#13;  event admit&#13;  &#9;any p d&#13;  &#9;where&#13;  &#9;&#9;@grd1 p ∈ Personn&#13;  &#9;&#9;@grd2 d ∈ Door&#13;  &#9;then&#13;  &#9;&#9;@act1 org(d) ≔ loc(p)&#13;  &#9;&#9;@act2 {p↦dst(d)} ∈ auth&#13;  &#9;&#9;@act3 p∉ dom(pud)&#13;&#13;  end&#13;end&#13;" version="5">
+<org.eventb.core.refinesMachine name="_X_hQUPpFEd6qSajnezzwWQ" org.eventb.core.target="auth2"/>
+<org.eventb.core.seesContext name="_X_hQUfpFEd6qSajnezzwWQ" org.eventb.core.target="ctx2"/>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="auth"/>
+<org.eventb.core.variable name="6" org.eventb.core.identifier="group"/>
+<org.eventb.core.variable name="=" org.eventb.core.identifier="loc"/>
+<org.eventb.core.variable name="@" org.eventb.core.identifier="gw"/>
+<org.eventb.core.variable name="_X_h3YPpFEd6qSajnezzwWQ" org.eventb.core.identifier="org"/>
+<org.eventb.core.variable name="_X_h3YfpFEd6qSajnezzwWQ" org.eventb.core.identifier="dst"/>
+<org.eventb.core.variable name="_X_h3YvpFEd6qSajnezzwWQ" org.eventb.core.identifier="pud"/>
+<org.eventb.core.invariant name="_X_iecPpFEd6qSajnezzwWQ" org.eventb.core.label="inv1" org.eventb.core.predicate="org ∈ Door ⇸  Building"/>
+<org.eventb.core.invariant name="_X_iecfpFEd6qSajnezzwWQ" org.eventb.core.label="inv2" org.eventb.core.predicate="dst ∈ Door ⇸ Building"/>
+<org.eventb.core.invariant name="_X_iecvpFEd6qSajnezzwWQ" org.eventb.core.label="inv3" org.eventb.core.predicate="pud ∈ Personn ⤔ Door"/>
+<org.eventb.core.invariant name="_X_wg4PpFEd6qSajnezzwWQ" org.eventb.core.label="inv4" org.eventb.core.predicate="pud;org ⊆ loc"/>
+<org.eventb.core.invariant name="_X_wg4fpFEd6qSajnezzwWQ" org.eventb.core.label="inv5" org.eventb.core.predicate="pud;dst ⊆ auth"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addPtoG">
+<org.eventb.core.refinesEvent name="_X_xH8PpFEd6qSajnezzwWQ" org.eventb.core.target="addPtoG"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmPofG">
+<org.eventb.core.refinesEvent name="_X_xvAPpFEd6qSajnezzwWQ" org.eventb.core.target="rmPofG"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addAuth">
+<org.eventb.core.refinesEvent name="_X_xvAfpFEd6qSajnezzwWQ" org.eventb.core.target="addAuth"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmAuth">
+<org.eventb.core.refinesEvent name="_X_yWEPpFEd6qSajnezzwWQ" org.eventb.core.target="rmAuth"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="move">
+<org.eventb.core.refinesEvent name="_X_yWEfpFEd6qSajnezzwWQ" org.eventb.core.target="move"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="addGw">
+<org.eventb.core.refinesEvent name="_X_y9IPpFEd6qSajnezzwWQ" org.eventb.core.target="addGw"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rmGW">
+<org.eventb.core.refinesEvent name="_X_y9IfpFEd6qSajnezzwWQ" org.eventb.core.target="rmGW"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_X_zkMPpFEd6qSajnezzwWQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="admit">
+<org.eventb.core.parameter name="_X_zkMfpFEd6qSajnezzwWQ" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="_X_zkMvpFEd6qSajnezzwWQ" org.eventb.core.identifier="d"/>
+<org.eventb.core.guard name="_X_zkM_pFEd6qSajnezzwWQ" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ Personn"/>
+<org.eventb.core.guard name="_X_8uIPpFEd6qSajnezzwWQ" org.eventb.core.label="grd2" org.eventb.core.predicate="d ∈ Door"/>
+<org.eventb.core.action name="_X_9VMPpFEd6qSajnezzwWQ" org.eventb.core.assignment="org(d) ≔ loc(p)" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_X_9VMfpFEd6qSajnezzwWQ" org.eventb.core.assignment="{p↦dst(d)} ∈ auth" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_X_9VMvpFEd6qSajnezzwWQ" org.eventb.core.assignment="p∉ dom(pud)" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

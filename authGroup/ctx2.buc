@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1262725833088" org.eventb.texttools.text_representation="context ctx2 extends ctx&#13;&#13;sets Door //door from buildings to gateway&#13;end&#13;" version="3">
+<org.eventb.core.extendsContext name="_wtMvMPo-Ed6qSajnezzwWQ" org.eventb.core.target="ctx"/>
+<org.eventb.core.carrierSet name="_wtMvMfo-Ed6qSajnezzwWQ" org.eventb.core.comment="door from buildings to gateway" org.eventb.core.identifier="Door"/>
+</org.eventb.core.contextFile>

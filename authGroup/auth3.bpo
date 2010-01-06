@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="2">
+<org.eventb.core.poIdentifier name="Building" org.eventb.core.type="ℙ(Building)"/>
+<org.eventb.core.poIdentifier name="Group" org.eventb.core.type="ℙ(Group)"/>
+<org.eventb.core.poIdentifier name="Personn" org.eventb.core.type="ℙ(Personn)"/>
+<org.eventb.core.poIdentifier name="FOREIGNER" org.eventb.core.type="Group"/>
+<org.eventb.core.poIdentifier name="OUTSIDE" org.eventb.core.type="Building"/>
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="OUTSIDE∈Building" org.eventb.core.source="/authGroup/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="FOREIGNER∈Group" org.eventb.core.source="/authGroup/ctx.buc|org.eventb.core.contextFile#ctx|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="Door" org.eventb.core.type="ℙ(Door)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="15">
+<org.eventb.core.poIdentifier name="auth" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.poIdentifier name="dst" org.eventb.core.type="ℙ(Door×Building)"/>
+<org.eventb.core.poIdentifier name="group" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.poIdentifier name="gw" org.eventb.core.type="ℙ(Building×Building)"/>
+<org.eventb.core.poIdentifier name="loc" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.poIdentifier name="org" org.eventb.core.type="ℙ(Door×Building)"/>
+<org.eventb.core.poIdentifier name="pud" org.eventb.core.type="ℙ(Personn×Door)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="auth∈Group ↔ Building" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="group∈Personn → Group" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="loc∈Personn → Building" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ loc(p)∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.invariant#@"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀p⦂Personn·p∈Personn⇒group(p) ↦ OUTSIDE∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.invariant#A"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="FOREIGNER ↦ OUTSIDE∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.invariant#B"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="gw∈Building ↔ Building" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.invariant#A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT0"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="org'∈Door ⇸ Building" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC2" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT0"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="dst'∈Door ⇸ Building" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecfpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC2" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecfpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT0"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="pud'∈Personn ⤔ Door" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecvpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC2" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecvpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT0"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="pud';org'⊆Personn × {OUTSIDE}" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SRC2" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT0" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="15">
+<org.eventb.core.poIdentifier name="dst'" org.eventb.core.type="ℙ(Door×Building)"/>
+<org.eventb.core.poIdentifier name="gw'" org.eventb.core.type="ℙ(Building×Building)"/>
+<org.eventb.core.poIdentifier name="group'" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.poIdentifier name="org'" org.eventb.core.type="ℙ(Door×Building)"/>
+<org.eventb.core.poIdentifier name="loc'" org.eventb.core.type="ℙ(Personn×Building)"/>
+<org.eventb.core.poIdentifier name="auth'" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.poIdentifier name="pud'" org.eventb.core.type="ℙ(Personn×Door)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT0" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT0" org.eventb.core.poStamp="15"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT1" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.poIdentifier name="group'" org.eventb.core.type="ℙ(Personn×Group)"/>
+<org.eventb.core.poIdentifier name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT1" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT1" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p ↦ g∉group" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#8|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈Personn" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#8|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="g∈Group" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#8|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="g ↦ loc(p)∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#8|org.eventb.core.guard#0"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="g ↦ OUTSIDE∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#8|org.eventb.core.guard#1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT2" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.poIdentifier name="group'" org.eventb.core.type="ℙ(Personn×Group)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT2" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT2" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈Personn" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#9|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="FOREIGNER ↦ loc(p)∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#9|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT3" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.poIdentifier name="auth'" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.poIdentifier name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT3" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT3" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="b∈Building" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#:|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="g∈Group" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#:|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="g ↦ b∉auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#:|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT4" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.poIdentifier name="auth'" org.eventb.core.type="ℙ(Group×Building)"/>
+<org.eventb.core.poIdentifier name="g" org.eventb.core.type="Group"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT4" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT4" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g≠FOREIGNER" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#;|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="b≠OUTSIDE" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#;|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="g ↦ b∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#;|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀p⦂Personn·p∈Personn∧p ↦ g∈group⇒p ↦ b∉loc" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#;|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="move/inv4/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT5"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="pud;org⊆loc{p ↦ b}" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#?"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#?"/>
+<org.eventb.core.poSource name="SRC2" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#move\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT5" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.poIdentifier name="b" org.eventb.core.type="Building"/>
+<org.eventb.core.poIdentifier name="loc'" org.eventb.core.type="ℙ(Personn×Building)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT5" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT5" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈Personn" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#?|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="b∈Building" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#?|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p ↦ b∉loc" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#?|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="group(p) ↦ b∈auth" org.eventb.core.source="/authGroup/auth1.bum|org.eventb.core.machineFile#auth1|org.eventb.core.event#?|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="loc(p) ↦ b∈gw" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#?|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT6" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="bd" org.eventb.core.type="Building"/>
+<org.eventb.core.poIdentifier name="gw'" org.eventb.core.type="ℙ(Building×Building)"/>
+<org.eventb.core.poIdentifier name="bs" org.eventb.core.type="Building"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT6" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT6" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bd∈Building" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#B|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="bs∈Building" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#B|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="bs ↦ bd∉gw" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#B|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT7" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="bd" org.eventb.core.type="Building"/>
+<org.eventb.core.poIdentifier name="gw'" org.eventb.core.type="ℙ(Building×Building)"/>
+<org.eventb.core.poIdentifier name="bs" org.eventb.core.type="Building"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT7" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT7" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="bs ↦ bd∈gw" org.eventb.core.source="/authGroup/auth2.bum|org.eventb.core.machineFile#auth2|org.eventb.core.event#C|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="admit/inv1/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT8"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="org{d ↦ loc(p)}∈Door ⇸ Building" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#_X_zkMPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#admit\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="admit/inv4/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT8"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="pud;(org{d ↦ loc(p)})⊆loc" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#_X_zkMPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC1" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poSequent#admit\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="HINT1" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="admit/act1/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT8"/>
+<org.eventb.core.poPredicate name="GOAL" org.eventb.core.predicate="p∈dom(loc)∧loc∈Personn ⇸ Building" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#_X_zkMPpFEd6qSajnezzwWQ|org.eventb.core.action#_X_9VMPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSource name="SRC0" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#_X_zkMPpFEd6qSajnezzwWQ|org.eventb.core.action#_X_9VMPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poSelHint name="HINT0" org.eventb.core.poSelHintFst="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTALLHYPEVT8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTEVT8" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poIdentifier name="d" org.eventb.core.type="Door"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="Personn"/>
+<org.eventb.core.poIdentifier name="org'" org.eventb.core.type="ℙ(Door×Building)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPEVT8" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#EVTIDENTEVT8" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈Personn" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#_X_zkMPpFEd6qSajnezzwWQ|org.eventb.core.guard#_X_zkM_pFEd6qSajnezzwWQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="d∈Door" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.event#_X_zkMPpFEd6qSajnezzwWQ|org.eventb.core.guard#_X_8uIPpFEd6qSajnezzwWQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/authGroup/auth3.bpo|org.eventb.core.poFile#auth3|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="org∈Door ⇸ Building" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecPpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="dst∈Door ⇸ Building" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecfpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pud∈Personn ⤔ Door" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_iecvpFEd6qSajnezzwWQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="pud;org⊆loc" org.eventb.core.source="/authGroup/auth3.bum|org.eventb.core.machineFile#auth3|org.eventb.core.invariant#_X_wg4PpFEd6qSajnezzwWQ"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
